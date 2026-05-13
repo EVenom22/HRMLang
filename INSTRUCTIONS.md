@@ -9,9 +9,20 @@ In this file you will find information about the terms of this language and what
 </ul>
 
 # What are all these files for and how do they work?
-  <ol>
+
+  <ul>
     <li>program.txt</li>
-    <ul>
-      <li></li>
-    </ul>
-  </ol>
+    <dl>
+      <dt>What is this file?</dt>
+      <dd>In this file, the user writes a program in this language.</dd>
+      <dt>How does it work?</dt>
+      <dd>I don't think there's any need to explain how it works; you just need to know <a href="SYNTAX.md">how to write in this language.</a></dd>
+    </dl>
+    <li>main.py</li>
+    <dl>
+      <dt>What is this file?</dt>
+      <dd>In this file, the user writes a program in this language.</dd>
+      <dt>How does it work?</dt>
+      <dd>I don't think there's any need to explain how it works; you just need to know <a href="SYNTAX.md">how to write in this language.</a></dd>
+    </dl>
+  </ul>
