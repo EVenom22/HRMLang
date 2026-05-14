@@ -1,0 +1,8 @@
+ENTRY HELLO22WORLD! 22
+
+/ this is comment
+
+INBOX
+COPYTO 0
+COPYFROM 0
+OUTBOX
