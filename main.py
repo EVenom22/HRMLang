@@ -8,7 +8,7 @@ def read_program():
     return prog
 
 if __name__ == "__main__":
-    print("Thanks for using b0.1 HRMLang notbook version")
+    print("Thanks for using a0.1 HRMLang notbook version")
 
     program: list[str] = read_program()
     output: list = []
