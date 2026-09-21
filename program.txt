@@ -1,8 +1,29 @@
-ENTRY HELLO22WORLD! 22
+ENTRY HelloWorld!0012 022
 
 / this is comment
 
+/ vvv this is key
+main:
+
+/ vvv takes symbol from input
 INBOX
+/ vvvvvv copy from hands to floor
 COPYTO 0
-COPYFROM 0
+/ vvvvvv decrease number to the floor
+BUMPDN 0
+
+/ vvvvvvvv jump to the key if in hands 0
+JUMPZ main
+/ vvvvvvvvvvvvv jump to the key if in hands less of 0
+JUMPN secondary
+
+/ vvvv put in output from hands
 OUTBOX
+
+/ vvvvvvvv jump to the key
+JUMP main
+
+/ vvvvvvvv anoter key
+secondary:
+INBOX
+JUMP main

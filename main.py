@@ -8,7 +8,7 @@ def read_program():
     return prog
 
 if __name__ == "__main__":
-    print("Thanks for using a0.1 HRMLang notbook version")
+    print("Thanks for using a0.2 HRMLang notbook version")
 
     program: list[str] = read_program()
     output: list = []
@@ -30,8 +30,8 @@ if __name__ == "__main__":
                 input: list[str] = entry.input
                 floor: list = entry.floar
                 break
-
-    for i in range(len(program)):
+    i = 0
+    while i != len(program):
         cmd: list[str] = program[i]
 
         if cmd == [] or cmd[0] == " " or cmd[0] == "ENTRY" or cmd[0] == "/":
@@ -66,8 +66,49 @@ if __name__ == "__main__":
                 command = COPYFROM(hand, floor, int(cmd[1]))
                 floor = command.floor
                 hand = command.hand
-        
+
+        elif cmd[0] == "JUMP":
+            if len(cmd) != 2:
+                raise SyntaxError("JUMP command must have 1 argument")
+            else:
+                i = JUMP(cmd[1], program).target
+
+        elif cmd[0] == "JUMPZ":
+            if len(cmd) != 2:
+                raise SyntaxError("JUMPZ command must have 1 argument")
+            else:
+                i = JUMPZ(cmd[1], program, i, hand).target
+
+        elif cmd[0] == "JUMPN":
+            if len(cmd) != 2:
+                raise SyntaxError("JUMPZ command must have 1 argument")
+            else:
+                i = JUMPN(cmd[1], program, i, hand).target
+
+        elif cmd[0] == "BUMPUP":
+            if len(cmd) != 2:
+                raise SyntaxError("BUMPUP command must have 1 argument")
+            else:
+                result = BUMPUP(hand, floor, int(cmd[1]))
+                hand = result.hand
+                floor = result.floor
+
+        elif cmd[0] == "BUMPDN":
+            if len(cmd) != 2:
+                raise SyntaxError("BUMPDN command must have 1 argument")
+            else:
+                result = BUMPDN(hand, floor, int(cmd[1]))
+                hand = result.hand
+                floor = result.floor
+
         else:
-            raise SyntaxError("Unknow command")
+
+            if len(cmd) != 1:
+                raise SyntaxError("key command must have 1 argument")
+
+            if list(cmd[0])[-1] != ":" or cmd[0].split(":")[0].islower() == False:
+                raise SyntaxError("Unknow command")
+
+        i += 1
 
     print(output)
