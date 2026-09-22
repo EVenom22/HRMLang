@@ -1,5 +1,5 @@
 # SYNTAX
-in version a0.1 has 5 commands (not counting comments)
+in version a0.2 has 10 commands (not counting comments)
 
 # ENTRY [input] [floor]
 all programs on this language must start with command ENTRY
