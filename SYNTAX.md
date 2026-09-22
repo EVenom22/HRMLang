@@ -31,3 +31,9 @@ This command is the same as <a href="https://github.com/EVenom22/HRMLang/edit/ma
 
 # JUMPN [key_name]
 This command is the same as <a href="https://github.com/EVenom22/HRMLang/edit/main/SYNTAX.md#jump-key_name">JUMP</a>, but it only works if the value on hand is less than 0. Do not include a colon when writing the key.
+
+# BUMBUP [floor_id]
+increases the value in [floor_id]
+
+# BUMBDN [floor_id]
+decreases the value in [floor_id]
